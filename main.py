@@ -50,7 +50,25 @@ while True:
 
     
     elif choice == "3":
-        print("Search Student Selected")
+        search_id = input("Enter Student ID to Search: ")
+
+        found = False
+
+        for student in students:
+            if student["id"] == search_id:
+                print("\nStudent Found")
+                print("-----------------------------")
+                print("ID :", student["id"])
+                print("Name :", student["name"])
+                print("Age :", student["age"])
+                print("Department :", student["department"])
+                print("CGPA :", student["cgpa"])
+                print("-----------------------------")
+                found = True
+                break
+
+        if found == False:
+            print("Student Not Found")
 
     elif choice == "4":
         print("Update Student Selected")
