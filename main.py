@@ -30,12 +30,25 @@ while True:
         students.append(student)
 
         print("Student Added Successfully!")
+    elif choice == "2":
+        if len(students) == 0:
+            print("No Students Found")
+
+        else:
+            print("\nStudent Details")
+            print("-----------------------------")
+
+            for student in students:
+                print("ID :", student["id"])
+                print("Name :", student["name"])
+                print("Age :", student["age"])
+                print("Department :", student["department"])
+                print("CGPA :", student["cgpa"])
+                print("-----------------------------")
 
     
 
-    elif choice == "2":
-        print("View Students Selected")
-
+    
     elif choice == "3":
         print("Search Student Selected")
 
