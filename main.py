@@ -1,4 +1,5 @@
-students=[]
+students = []
+
 while True:
     print("\n==============================")
     print(" Student Management System")
@@ -25,11 +26,12 @@ while True:
             "age": age,
             "department": department,
             "cgpa": cgpa
-            }
+        }
 
         students.append(student)
 
         print("Student Added Successfully!")
+
     elif choice == "2":
         if len(students) == 0:
             print("No Students Found")
@@ -46,9 +48,6 @@ while True:
                 print("CGPA :", student["cgpa"])
                 print("-----------------------------")
 
-    
-
-    
     elif choice == "3":
         search_id = input("Enter Student ID to Search: ")
 
@@ -71,7 +70,26 @@ while True:
             print("Student Not Found")
 
     elif choice == "4":
-        print("Update Student Selected")
+        update_id = input("Enter Student ID to Update: ")
+
+        found = False
+
+        for student in students:
+            if student["id"] == update_id:
+
+                print("\nEnter New Details")
+
+                student["name"] = input("Enter New Name: ")
+                student["age"] = input("Enter New Age: ")
+                student["department"] = input("Enter New Department: ")
+                student["cgpa"] = input("Enter New CGPA: ")
+
+                print("Student Updated Successfully!")
+                found = True
+                break
+
+        if found == False:
+            print("Student Not Found")
 
     elif choice == "5":
         print("Delete Student Selected")
