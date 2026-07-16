@@ -1,3 +1,4 @@
+students=[]
 while True:
     print("\n==============================")
     print(" Student Management System")
@@ -12,7 +13,25 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        print("Add Student Selected")
+        student_id = input("Enter Student ID: ")
+        name = input("Enter Name: ")
+        age = input("Enter Age: ")
+        department = input("Enter Department: ")
+        cgpa = input("Enter CGPA: ")
+
+        student = {
+            "id": student_id,
+            "name": name,
+            "age": age,
+            "department": department,
+            "cgpa": cgpa
+            }
+
+        students.append(student)
+
+        print("Student Added Successfully!")
+
+    
 
     elif choice == "2":
         print("View Students Selected")
