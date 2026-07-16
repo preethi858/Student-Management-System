@@ -92,7 +92,19 @@ while True:
             print("Student Not Found")
 
     elif choice == "5":
-        print("Delete Student Selected")
+        delete_id = input("Enter Student ID to Delete: ")
+
+        found = False
+
+        for student in students:
+            if student["id"] == delete_id:
+                students.remove(student)
+                print("Student Deleted Successfully!")
+                found = True
+                break
+
+        if found == False:
+            print("Student Not Found")
 
     elif choice == "6":
         print("Thank you!")
