@@ -60,3 +60,40 @@ Student-Management-System
 
 Preethi# Student-Management-System
 A menu-driven Student Management System built using Python.
+---
+
+## Screenshots
+
+### Main Menu
+
+![Main Menu](screenshots/main_menu.png)
+
+---
+
+### Add Student
+
+![Add Student](screenshots/add_student.png)
+
+---
+
+### View Students
+
+![View Students](screenshots/view_students.png)
+
+---
+
+### Search Student
+
+![Search Student](screenshots/search_student.png)
+
+---
+
+### Update Student
+
+![Update Student](screenshots/update_student.png)
+
+---
+
+### Delete Student
+
+![Delete Student](screenshots/delete_student.png)
