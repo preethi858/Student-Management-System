@@ -47,8 +47,16 @@ while True:
             print("Please enter a valid age.")
             continue
         department = input("Enter Department: ")
-        cgpa = input("Enter CGPA: ")
+        try:
+            cgpa = float(input("Enter CGPA: "))
 
+            if cgpa < 0 or cgpa > 10:
+                print("CGPA should be between 0 and 10.")
+                continue
+
+        except ValueError:
+            print("Please enter a valid CGPA.")
+            continue
         student = {
             "id": student_id,
             "name": name,
