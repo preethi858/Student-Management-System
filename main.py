@@ -1,4 +1,10 @@
-students = []
+import json
+
+try:
+    with open("data.json", "r") as file:
+        students = json.load(file)
+except:
+    students = []
 
 while True:
     print("\n==============================")
@@ -29,6 +35,9 @@ while True:
         }
 
         students.append(student)
+
+        with open("data.json", "w") as file:
+            json.dump(students, file, indent=4)
 
         print("Student Added Successfully!")
 
