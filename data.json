@@ -5,5 +5,12 @@
         "age": "20",
         "department": "CSE",
         "cgpa": "8.5"
+    },
+    {
+        "id": "102",
+        "name": "rahul",
+        "age": "21",
+        "department": "ECE",
+        "cgpa": "8.7"
     }
 ]

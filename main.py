@@ -21,6 +21,17 @@ while True:
 
     if choice == "1":
         student_id = input("Enter Student ID: ")
+        duplicate = False
+
+        for student in students:
+            if student["id"] == student_id:
+                duplicate = True
+                break
+
+        if duplicate:
+            print("Student ID already exists!")
+            continue
+        
         name = input("Enter Name: ")
         age = input("Enter Age: ")
         department = input("Enter Department: ")
