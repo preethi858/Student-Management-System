@@ -33,6 +33,10 @@ while True:
             continue
         
         name = input("Enter Name: ")
+
+        if name.strip() == "":
+            print("Name cannot be empty!")
+            continue
         age = input("Enter Age: ")
         department = input("Enter Department: ")
         cgpa = input("Enter CGPA: ")
