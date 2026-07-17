@@ -12,5 +12,12 @@
         "age": "21",
         "department": "ECE",
         "cgpa": "8.7"
+    },
+    {
+        "id": "103",
+        "name": "rahul",
+        "age": 21,
+        "department": "ECE",
+        "cgpa": "8.7"
     }
 ]

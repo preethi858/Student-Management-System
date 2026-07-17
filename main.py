@@ -37,7 +37,15 @@ while True:
         if name.strip() == "":
             print("Name cannot be empty!")
             continue
-        age = input("Enter Age: ")
+        try:
+            age = int(input("Enter Age: "))
+            if age <= 0:
+                print("Age must be greater than 0.")
+                continue
+
+        except ValueError:
+            print("Please enter a valid age.")
+            continue
         department = input("Enter Department: ")
         cgpa = input("Enter CGPA: ")
 
