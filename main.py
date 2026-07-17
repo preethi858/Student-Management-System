@@ -5,6 +5,65 @@ try:
         students = json.load(file)
 except:
     students = []
+def add_student():
+    global students
+
+    student_id = input("Enter Student ID: ")
+    duplicate = False
+
+    for student in students:
+        if student["id"] == student_id:
+            duplicate = True
+            break
+
+    if duplicate:
+        print("Student ID already exists!")
+        return
+
+    name = input("Enter Name: ")
+
+    if name.strip() == "":
+        print("Name cannot be empty!")
+        return
+
+    try:
+        age = int(input("Enter Age: "))
+
+        if age <= 0:
+            print("Age must be greater than 0.")
+            return
+
+    except ValueError:
+        print("Please enter a valid age.")
+        return
+
+    department = input("Enter Department: ")
+
+    try:
+        cgpa = float(input("Enter CGPA: "))
+
+        if cgpa < 0 or cgpa > 10:
+            print("CGPA should be between 0 and 10.")
+            return
+
+    except ValueError:
+        print("Please enter a valid CGPA.")
+        return
+
+    student = {
+        "id": student_id,
+        "name": name,
+        "age": age,
+        "department": department,
+        "cgpa": cgpa
+    }
+
+    students.append(student)
+
+    with open("data.json", "w") as file:
+        json.dump(students, file, indent=4)
+
+    print("Student Added Successfully!")
 
 while True:
     print("\n==============================")
@@ -20,57 +79,7 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        student_id = input("Enter Student ID: ")
-        duplicate = False
-
-        for student in students:
-            if student["id"] == student_id:
-                duplicate = True
-                break
-
-        if duplicate:
-            print("Student ID already exists!")
-            continue
-        
-        name = input("Enter Name: ")
-
-        if name.strip() == "":
-            print("Name cannot be empty!")
-            continue
-        try:
-            age = int(input("Enter Age: "))
-            if age <= 0:
-                print("Age must be greater than 0.")
-                continue
-
-        except ValueError:
-            print("Please enter a valid age.")
-            continue
-        department = input("Enter Department: ")
-        try:
-            cgpa = float(input("Enter CGPA: "))
-
-            if cgpa < 0 or cgpa > 10:
-                print("CGPA should be between 0 and 10.")
-                continue
-
-        except ValueError:
-            print("Please enter a valid CGPA.")
-            continue
-        student = {
-            "id": student_id,
-            "name": name,
-            "age": age,
-            "department": department,
-            "cgpa": cgpa
-        }
-
-        students.append(student)
-
-        with open("data.json", "w") as file:
-            json.dump(students, file, indent=4)
-
-        print("Student Added Successfully!")
+        add_student()
 
     elif choice == "2":
         if len(students) == 0:
