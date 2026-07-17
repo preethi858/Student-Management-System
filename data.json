@@ -33,5 +33,12 @@
         "age": 20,
         "department": "CSE",
         "cgpa": 8.9
+    },
+    {
+        "id": "201",
+        "name": "rahul",
+        "age": 20,
+        "department": "CSE",
+        "cgpa": 8.5
     }
 ]
